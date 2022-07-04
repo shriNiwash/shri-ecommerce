@@ -112,8 +112,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <p className="card-text">
-                        Subscribe and get our weekly newsletter We'll never
-                        share your email address
+                        Subscribe and get our weekly newsletter We'll never share your email address
                       </p>
                     </li>
                   </ul>

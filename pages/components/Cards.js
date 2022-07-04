@@ -20,62 +20,40 @@ const Cards = () => {
             <div className="col-lg-4">
               <div className="card text-center cards">
                 <div className="card-body">
-                  <Link href="/">
-                    <a>
-                      <i className="fa fa-laptop icones" id="awesome"></i>
-                    </a>
-                  </Link>
+                <Link href="/"><a><i className="fa fa-laptop icones" id="awesome" /></a></Link>
                   <h3 className="card-title">Organic vagetables</h3>
                   <p className="card-text">
                     We should care about the food we are having on the daily
                     basis.The product we are using should be examined first and
                     then it should be used.
                   </p>
-                  <Link href="#">
-                    <a className="btn btn-primary" id="button-card">
-                      Read More
-                    </a>
-                  </Link>
+                  <Link href="#"><a className="btn btn-primary" id="button-card">Read More</a></Link>
                 </div>
               </div>
             </div>
             <div className="col-lg-4">
               <div className="card text-center cards">
                 <div className="card-body">
-                  <Link href="">
-                    {" "}
-                    <a>
-                      <i className="fa fa-users icones"></i>
-                    </a>
-                  </Link>
+                  
+                <Link href=""><a><i className="fa fa-users icones"></i></a></Link>
+                  
                   <h4 className="card-title">Highly Qualified Teachers</h4>
                   <p className="card-text">
                     Some quick example text to build on the card title and make up the bulk of the cards content.
                   </p>
-                  <Link href="#">
-                    <a className="btn btn-primary" id="button-card">
-                      Read More
-                    </a>
-                  </Link>
+                  <Link href="#"><a className="btn btn-primary" id="button-card"> Read More</a></Link>
                 </div>
               </div>
             </div>
             <div className="col-lg-4">
               <div className="card text-center cards">
                 <div className="card-body">
-                  <Link href=""><a >
-                    <i className="fa fa-book icones"></i>
-                  </a>
-                  </Link>
+                <Link href=""><a > <i className="fa fa-book icones"></i></a></Link> 
                   <h3 className="card-title">Book Library & Stores</h3>
                   <p className="card-text">
                     Some quick example text to build on the card title and make up the bulk of the cards content.
                   </p>
-                  <Link href="#">
-                    <a className="btn btn-primary" id="button-card">
-                      Read More
-                    </a>
-                  </Link>
+                  <Link href="#"><a className="btn btn-primary" id="button-card"> Read More</a></Link>
                 </div>
               </div>
             </div>

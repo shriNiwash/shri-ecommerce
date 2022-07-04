@@ -40,31 +40,17 @@ const Footer = () => {
                         </li>
                         <li>
                           <p>
-                            <i className="far fa-envelope-open"></i>{" "}
+                            <i className="far fa-envelope-open"></i>
                             corporate-mail@support.com
                           </p>
                         </li>
                       </ul>
                       <div className="social-footer">
-                       <Link href="/"> <a >
-                          <i className="fab fa-facebook" id="facebook"></i>
-                        </a></Link>
-                        <Link href="/"><a >
-                          <i className="fab fa-twitter-square" id="twitter"></i>
-                        </a>
-                        </Link>
-                        <Link href="/"><a >
-                          <i className="fab fa-instagram" id="instagram"></i>
-                        </a>
-                        </Link>
-                        <Link href="/"><a >
-                          <i className="fab fa-google-plus" id="google"></i>
-                        </a>
-                        </Link>
-                       <Link href="/"> <a >
-                          <i className="fab fa-linkedin" id="linkedin"></i>
-                        </a>
-                        </Link>
+                       <Link href="/"><a><i className="fab fa-facebook" id="facebook"></i></a></Link>
+                       <Link href="/"><a><i className="fab fa-twitter-square" id="twitter"></i></a></Link>
+                       <Link href="/"><a><i className="fab fa-instagram" id="instagram"></i></a></Link>
+                       <Link href="/"><a><i className="fab fa-google-plus" id="google"></i></a></Link>
+                       <Link href="/"><a><i className="fab fa-linkedin" id="linkedin"></i></a></Link>
                       </div>
                     </div>
                   </div>
@@ -104,10 +90,7 @@ const Footer = () => {
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                         />
-                       <Link href="/"> <a >
-                          <span className="far fa-envelope"></span>
-                        </a>
-                        </Link>
+                       <Link href="/"><a><i className="far fa-envelope"></i></a></Link>
                       </div>
                     </li>
                     <li>
@@ -128,20 +111,19 @@ const Footer = () => {
                         <h5>Quick Links</h5>
                       </li>
                       <li>
-                        <Link href=""><a >Home</a></Link>
+                        <Link href="#"><a>Home</a></Link>
                       </li>
                       <li>
-                      <Link href=""><a >About</a></Link>
+                      <Link href="#"><a>About</a></Link>
                       </li>
                       <li>
-                       <Link href=""> <a >Services</a></Link>
+                       <Link href="#"><a>Services</a></Link>
                       </li>
                       <li>
-                       <Link href=""> <a >Blog</a></Link>
+                       <Link href="#"><a>Blog</a></Link>
                       </li>
                       <li>
-                       <Link href=""> <a >Contacts</a>
-                       </Link>
+                       <Link href="/"><a >Contacts</a></Link>
                       </li>
                     </ul>
                   </div>
@@ -160,10 +142,10 @@ const Footer = () => {
             <div className="col-sm-6 naming">
               <ul>
                 <li>
-                  <Link href=""><a >Privacy</a></Link>
+                  <Link href="/"><a>Privacy</a></Link>
                 </li>
                 <li>
-                 <Link href=""> <a >Terms And Condition</a></Link>
+                 <Link href="/"><a >Terms And Condition</a></Link>
                 </li>
               </ul>
             </div>

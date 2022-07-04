@@ -50,7 +50,7 @@ const Cards = () => {
                   </Link>
                   <h4 className="card-title">Highly Qualified Teachers</h4>
                   <p className="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                    Some quick example text to build on the card title and make up the bulk of the cards content.
                   </p>
                   <Link href="#">
                     <a className="btn btn-primary" id="button-card">
@@ -69,7 +69,7 @@ const Cards = () => {
                   </Link>
                   <h3 className="card-title">Book Library & Stores</h3>
                   <p className="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                    Some quick example text to build on the card title and make up the bulk of the cards content.
                   </p>
                   <Link href="#">
                     <a className="btn btn-primary" id="button-card">

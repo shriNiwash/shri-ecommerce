@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -45,21 +46,25 @@ const Footer = () => {
                         </li>
                       </ul>
                       <div className="social-footer">
-                        <a href="/">
+                       <Link href="/"> <a >
                           <i className="fab fa-facebook" id="facebook"></i>
-                        </a>
-                        <a href="/">
+                        </a></Link>
+                        <Link href="/"><a >
                           <i className="fab fa-twitter-square" id="twitter"></i>
                         </a>
-                        <a href="/">
+                        </Link>
+                        <Link href="/"><a >
                           <i className="fab fa-instagram" id="instagram"></i>
                         </a>
-                        <a href="/">
+                        </Link>
+                        <Link href="/"><a >
                           <i className="fab fa-google-plus" id="google"></i>
                         </a>
-                        <a href="/">
+                        </Link>
+                       <Link href="/"> <a >
                           <i className="fab fa-linkedin" id="linkedin"></i>
                         </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -99,9 +104,10 @@ const Footer = () => {
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                         />
-                        <a href="/">
+                       <Link href="/"> <a >
                           <span className="far fa-envelope"></span>
                         </a>
+                        </Link>
                       </div>
                     </li>
                     <li>
@@ -123,19 +129,20 @@ const Footer = () => {
                         <h5>Quick Links</h5>
                       </li>
                       <li>
-                        <a href="">Home</a>
+                        <Link href=""><a >Home</a></Link>
                       </li>
                       <li>
-                        <a href="">About</a>
+                      <Link href=""><a >About</a></Link>
                       </li>
                       <li>
-                        <a href="">Services</a>
+                       <Link href=""> <a >Services</a></Link>
                       </li>
                       <li>
-                        <a href="">Blog</a>
+                       <Link href=""> <a >Blog</a></Link>
                       </li>
                       <li>
-                        <a href="">Contacts</a>
+                       <Link href=""> <a >Contacts</a>
+                       </Link>
                       </li>
                     </ul>
                   </div>
@@ -154,10 +161,10 @@ const Footer = () => {
             <div className="col-sm-6 naming">
               <ul>
                 <li>
-                  <a href="">Privacy</a>
+                  <Link href=""><a >Privacy</a></Link>
                 </li>
                 <li>
-                  <a href="">Terms And Condition</a>
+                 <Link href=""> <a >Terms And Condition</a></Link>
                 </li>
               </ul>
             </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Cards from "./components/Cards";
 import Middle from "./components/Middle";
 import Footer from "./components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -63,39 +64,44 @@ export default function Home() {
               ></Image>
             </div>
           </div>
-          <a
-            className="carousel-control-prev"
-            href="#carouselExampleIndicators"
-            role="button"
-            data-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="sr-only">Previous</span>
-          </a>
-          <a
-            className="carousel-control-next"
-            href="#carouselExampleIndicators"
-            role="button"
-            data-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="sr-only">Next</span>
-          </a>
+          <Link href="#carouselExampleIndicators">
+            {" "}
+            <a
+              className="carousel-control-prev"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="sr-only">Previous</span>
+            </a>
+          </Link>
+          <Link href="#carouselExampleIndicators">
+            <a
+              className="carousel-control-next"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="sr-only">Next</span>
+            </a>
+          </Link>
         </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" />
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-    <Cards />
-    <Middle />
-    <Footer />
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"
+      ></script>
+      <Cards />
+      <Middle />
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 const Middle = () => {
   return (
@@ -30,9 +31,10 @@ const Middle = () => {
                       where no preservatives are used and hence customers shall get the fresh and healthy
                       vagetables through this website.
                       </p>
-                      <a href="#" class="btn btn-primary" id="button-card">
+                      <Link href="#"><a  class="btn btn-primary" id="button-card">
                         Read More
                       </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

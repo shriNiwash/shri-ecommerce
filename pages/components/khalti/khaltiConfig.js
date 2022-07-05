@@ -1,8 +1,9 @@
-import myKey from './khaltikey';
+import React from 'react';
+import MyKey from './khaltikey';
 
-let config = {
+ let Config = {
     // replace this key with yours
-    "publicKey": myKey.publicTestKey,
+    "publicKey": MyKey.publicTestKey,
     "productIdentity": "78",
     "productName": "My E-commerce Store",
     "productUrl": "http://localhost:3000",
@@ -23,4 +24,4 @@ let config = {
     "paymentPreference": ["KHALTI", "EBANKING","MOBILE_BANKING", "CONNECT_IPS", "SCT"],
 };
 
-export default config;
+export default Config;

@@ -5,6 +5,7 @@ import Cards from "./components/Cards";
 import Middle from "./components/Middle";
 import Footer from "./components/Footer";
 import Link from "next/link";
+import Script from 'next/script';
 
 export default function Home() {
   return (
@@ -72,12 +73,8 @@ export default function Home() {
         
         </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" />
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossOrigin="anonymous"
-      ></script>
+      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></Script>
+      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></Script>
       <Cards />
       <Middle />
       <Footer />

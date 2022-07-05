@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from 'next/link';
+import Script from "next/script";
 
 const Navbar = () => {
   return (
@@ -58,7 +59,7 @@ const Navbar = () => {
             </div>
           </div>
         </nav>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" />
+        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></Script>
       </div>
     </>
   );

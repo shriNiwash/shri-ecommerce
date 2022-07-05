@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "./components/navibar";
+import Link from "next/link";
 
 export const getStaticProps = async () => {
   const res = await fetch(
@@ -58,9 +59,7 @@ const Products = ({ data }) => {
                   <h6 className="card-title">{list.volumeInfo.subtitle}</h6>
                   <p className="card-text">{list.volumeInfo.publisher}</p>
                   <a className="btn btn-primary">Detail</a>
-                  <a className="btn btn-primary" id="addtocard">
-                    Add To Cart
-                  </a>
+                  <Link href="/Payment"><a className="btn btn-primary" id="addtocard">Add to Cart</a></Link>
                 </div>
               </div>
             </>

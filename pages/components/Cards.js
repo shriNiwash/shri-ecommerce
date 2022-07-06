@@ -53,7 +53,7 @@ const Cards = () => {
                   <p className="card-text">
                     Some quick example text to build on the card title and make up the bulk of the cards content.
                   </p>
-                  <Link href="#"><a className="btn btn-primary" id="button-card"> Read More</a></Link>
+                  <Link href="/Payment"><a className="btn btn-primary" id="button-card"> Read More</a></Link>
                 </div>
               </div>
             </div>

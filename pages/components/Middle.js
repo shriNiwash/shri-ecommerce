@@ -31,7 +31,7 @@ const Middle = () => {
                       where no preservatives are used and hence customers shall get the fresh and healthy
                       vagetables through this website.
                       </p>
-                      <Link href="#"><a  className="btn btn-primary" id="button-card">
+                      <Link href="/Payment"><a  className="btn btn-primary" id="button-card">
                         Read More
                       </a>
                       </Link>

@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic";
+import Navbar from "./components/navibar";
+import Footer from "./components/Footer";
 
 const Khalti = dynamic(
   () => {
@@ -8,10 +10,13 @@ const Khalti = dynamic(
 );
 
 const Payment = ()=>{
-    return(<>
-        <h1>Pay via following payment methods</h1>
-        <div><Khalti /></div>
-    </>)
+    return(<div className="contai">
+        <Navbar />
+        <div className="container">
+            <h1>Pay via Khalti</h1>
+            <Khalti />
+        </div>
+    </div>)
 }
 
 export default Payment;

@@ -20,8 +20,8 @@ const Footer = () => {
             <div className="col-sm-3">
               <div className="container" id="footer-last">
                 <div id="shriniwash">
-                  <div className="card-body">
-                    <div className="name">
+                  <div className="card-body mt-2">
+                    <div className="name ">
                       <ul>
                         <li>
                           <h5>Contact Us</h5>
@@ -59,7 +59,7 @@ const Footer = () => {
             </div>
             <div className="col-sm-3">
               <div >
-                <div className="card-body">
+                <div className="card-body mt-3">
                   <div className="name">
                     <ul>
                       <li>
@@ -77,7 +77,7 @@ const Footer = () => {
             </div>
             <div className="col-sm-3">
               <div >
-                <div className="card-body" id="nepali">
+                <div className="card-body mt-3" id="nepali">
                   <ul>
                     <li>
                       <h5>Newsletter</h5>

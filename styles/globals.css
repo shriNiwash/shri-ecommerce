@@ -912,3 +912,52 @@ a {
 .left_color{
   color: white;
 }
+
+
+#productlist{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: vertical;
+  width: 100%;
+}
+
+#productname{
+  font-size: 29px;
+    font-style: italic;
+}
+
+#productDetails{
+  font-size: 22px;
+    font-weight: 600;
+}
+
+.productInput{
+  padding: 17px;
+    border: 6px solid;
+    border-radius: 25px;
+    font-size: 19px;
+    justify-content: center;
+    text-align: center;
+    font-weight: 300;
+}
+
+.khalti{
+  color: black;
+  background: yellow;
+  padding: 9px;
+  font-size: 18px;
+  font-style: italic;
+  border: 2px solid;
+  border-radius: 14px;
+}
+
+.khalti:hover{
+  background-color: #009578;
+  color: black;
+  cursor: pointer;
+}
+
+.productListing{
+  background: #4fbe44;
+}

@@ -6,7 +6,14 @@ import Footer from "./Footer";
 
 
 export const getServerSideProps = async () => {
-  const res = await fetch("https://ecommerce-payment.herokuapp.com/list");
+  const res = await fetch("https://ecommerce-payment.herokuapp.com/list",{
+    method:"GET",
+    credentials: 'include',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+}
+  );
   const data = await res.json();
   console.log(data);
   return {

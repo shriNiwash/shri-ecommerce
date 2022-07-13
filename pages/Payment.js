@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Navbar from "./components/navibar";
 import Footer from "./components/Footer";
+import { useState } from "react";
 
 const Khalti = dynamic(
   () => {

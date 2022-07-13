@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Image from "next/image";
 import { useState } from "react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 
 
 const Khalti = dynamic(
@@ -28,6 +29,7 @@ export const getServerSideProps = async (context) => {
   };
 
 const ProductList = ({data})=>{
+  const router = useRouter();
     const [Data,setData] = useState('');
     return(<div className="productListing">
     <Navbar />
@@ -55,8 +57,7 @@ const ProductList = ({data})=>{
                 <h3>Enter the quantity</h3>
                 <input type="number" name="name" onChange={(e)=>setData(e.target.value)} className="productInput" />
             </div><br />
-            <Khalti records={Data*data.price*100}/>
-
+            <Khalti records={Data*data.price*100} />
         </div><br />
         <Footer />
     </div>)

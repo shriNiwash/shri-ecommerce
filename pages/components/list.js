@@ -13,7 +13,7 @@ export const getServerSideProps = async (context) => {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${datas}`
 });
-  const resp = await fetch("http://ecommerce-payment.herokuapp.com/list",{
+  const resp = await fetch("https://ecommerce-payment.herokuapp.com/list",{
     method:"GET",
     credentials: 'include',
     headers: myHeaders

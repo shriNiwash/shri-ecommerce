@@ -18,7 +18,7 @@ export const getServerSideProps = async (context) => {
     const ids = id.productList;
     console.log(ids);
     const res = await fetch(
-      `http://ecommerce-payment.herokuapp.com/data/${ids}`
+      `https://ecommerce-payment.herokuapp.com/data/${ids}`
     );
     const data = await res.json();
     return {

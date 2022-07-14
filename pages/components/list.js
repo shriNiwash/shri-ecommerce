@@ -4,22 +4,20 @@ import Head from "next/head";
 import Navbar from "./navibar";
 import Footer from "./Footer";
 
-
-
 export const getServerSideProps = async (context) => {
   const datas = context.req.cookies.jwt;
   const myHeaders = new Headers({
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${datas}`
-});
-  const resp = await fetch("https://ecommerce-payment.herokuapp.com/list",{
-    method:"GET",
-    credentials: 'include',
-    headers: myHeaders
-}
-  );
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${datas}`,
+  });
+  const resp = await fetch("https://ecommerce-payment.herokuapp.com/list", {
+    method: "GET",
+    credentials: "include",
+    headers: myHeaders,
+  });
 
   const data = await resp.json();
+  console.log(data);
   return {
     props: {
       data,
@@ -30,7 +28,6 @@ export const getServerSideProps = async (context) => {
 const List = ({ data }) => {
   return (
     <>
-    
       <Head>
         <link
           rel="stylesheet"

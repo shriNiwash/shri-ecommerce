@@ -7,7 +7,6 @@ import Footer from "./Footer";
 
 
 export const getServerSideProps = async (context) => {
-  console.log(context.req.cookies.jwt);
   const datas = context.req.cookies.jwt;
   const myHeaders = new Headers({
     'Content-Type': 'application/json',
@@ -21,7 +20,6 @@ export const getServerSideProps = async (context) => {
   );
 
   const data = await resp.json();
-  console.log(data);
   return {
     props: {
       data,

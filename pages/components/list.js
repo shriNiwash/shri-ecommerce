@@ -5,16 +5,22 @@ import Navbar from "./navibar";
 import Footer from "./Footer";
 
 
-export const getServerSideProps = async () => {
-  const res = await fetch("https://ecommerce-payment.herokuapp.com/list",{
+
+export const getServerSideProps = async (context) => {
+  console.log(context.req.cookies.jwt);
+  const datas = context.req.cookies.jwt;
+  const myHeaders = new Headers({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${datas}`
+});
+  const resp = await fetch("http://ecommerce-payment.herokuapp.com/list",{
     method:"GET",
     credentials: 'include',
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8'
-    }
+    headers: myHeaders
 }
   );
-  const data = await res.json();
+
+  const data = await resp.json();
   console.log(data);
   return {
     props: {

@@ -21,7 +21,7 @@ const Registration = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await fetch("https://ecommerce-payment.herokuapp.com/register", {
+    await fetch("http://ecommerce-payment.herokuapp.com/register", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {

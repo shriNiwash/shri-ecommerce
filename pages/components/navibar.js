@@ -1,8 +1,21 @@
 import Head from "next/head";
 import Link from 'next/link';
 import Script from "next/script";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const router = useRouter();
+  const logout=async(e)=>{
+    e.preventDefault();
+    const resp = await fetch("http://localhost:3001/logout",{
+      method:"POST",
+      credentials: 'include',
+  }
+
+    );
+    router.push("/");
+
+  }
   return (
     <>
       <Head>
@@ -34,7 +47,7 @@ const Navbar = () => {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                <li className="nav-item">
-                  <Link href="/"><a className="nav-link active" aria-current="page" > Home</a></Link>
+                  <Link href="/home"><a className="nav-link active" aria-current="page" > Home</a></Link>
                 </li>
                 <li className="nav-item">
                  <Link href="/product">
@@ -57,7 +70,7 @@ const Navbar = () => {
                 <button className="btn btn-outline-success" id="logout" type="submit">
                   Search
                 </button>
-                <button className="btn btn-outline-success" id="logout" type="submit">
+                <button className="btn btn-outline-success" id="logout" type="submit" onClick={(e)=>logout(e)}>
                   LogOut
                 </button>
               </form>

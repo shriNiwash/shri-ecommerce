@@ -596,6 +596,9 @@ a {
 }
 
 @media screen and (max-width: 980px) {
+  #cardData{
+    width: 20.5rem;
+  }
   .head{
       margin-top: 3px;
   }
@@ -676,6 +679,9 @@ a {
 
 
 @media screen and (max-width: 768px) {
+  #cardData{
+    width: 20.5rem;
+  }
   .head{
       margin-top: 3px;
   }
@@ -758,6 +764,15 @@ a {
 }
 
 @media screen and (max-width: 756px) {
+  #footer-data{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #cardData{
+    width: 100%;
+    margin-left: 0px;
+  }
   .head{
       margin-top: 3px;
   }

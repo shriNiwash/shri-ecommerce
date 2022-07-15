@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Navbar from "./navibar";
 
 const Registration = () => {
   const router = useRouter();
@@ -42,7 +41,6 @@ const Registration = () => {
       <Head>
         <title>Login Page</title>
       </Head>
-      <Navbar />
       <div>
         <form action="/login" method="post" onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">

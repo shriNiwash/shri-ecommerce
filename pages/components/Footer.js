@@ -17,7 +17,7 @@ const Footer = () => {
       <section className="footer">
         <div className="container" id="footer-last">
           <div className="row" id="niwash">
-            <div className="col-sm-3">
+            <div className="col-sm-3" id="footer-data">
               <div className="container" id="footer-last">
                 <div id="shriniwash">
                   <div className="card-body mt-2">
@@ -57,7 +57,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-sm-3">
+            <div className="col-sm-3" id="footer-data">
               <div >
                 <div className="card-body mt-3">
                   <div className="name">
@@ -75,7 +75,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-sm-3">
+            <div className="col-sm-3" id="footer-data">
               <div >
                 <div className="card-body mt-3" id="nepali">
                   <ul>
@@ -102,7 +102,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-sm-3">
+            <div className="col-sm-3" id="footer-data">
               <div >
                 <div className="card-body">
                   <div className="name text-left">

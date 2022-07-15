@@ -833,6 +833,9 @@ a {
 }
 
 @media screen and (max-width: 360px) {
+  #cardData{
+    width: 20.5rem;
+  }
   #cant{
       margin-top: 21px;
       position: relative;

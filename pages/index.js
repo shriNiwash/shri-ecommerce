@@ -33,7 +33,7 @@ const Home = () => {
 
       if(redirect)
       {
-        router.push("/home");
+        router.push("/home/home");
       }
 
   return (

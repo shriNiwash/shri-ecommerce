@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import Navbar from "./navibar";
-import Footer from "./Footer";
+import Navbar from "../navibar";
+import Footer from "../Footer";
 
 export const getServerSideProps = async (context) => {
-  const datas = context.req.cookies.jwt;
+  const datas = context.req.cookies['jwt-local'];
+  console.log(context.req.cookies['jwt-local']);
   const myHeaders = new Headers({
     "Content-Type": "application/json",
     Authorization: `Bearer ${datas}`,

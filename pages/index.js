@@ -20,7 +20,7 @@ const Home = () => {
 
     const onSubmit = async (e)=>{
         e.preventDefault();
-       await fetch('http://localhost:3001/login',{
+       await fetch('https://ecommerce-payment.herokuapp.com/login',{
           method:"POST",
           body: JSON.stringify(user),
           credentials: 'include',

@@ -20,7 +20,7 @@ const Home = () => {
 
     const onSubmit = async (e)=>{
         e.preventDefault();
-       await fetch('https://ecommerce-payment.herokuapp.com/login',{
+       await fetch('http://localhost:3001/login',{
           method:"POST",
           body: JSON.stringify(user),
           credentials: 'include',
@@ -41,8 +41,8 @@ const Home = () => {
     <Head>
         <title>Login Page</title>
     </Head>
-      <div>
-        <form action="/login" method="post" onSubmit={(e)=>onSubmit(e)}>
+      <div className="form-karan">
+        <form action="/login" method="post" onSubmit={(e)=>onSubmit(e)} className="form-style">
           <div className="form-group">
             <label>Username:</label>
             <input

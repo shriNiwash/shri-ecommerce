@@ -3,8 +3,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from 'next/router'
 
+
 const Home = () => {
   const router = useRouter();
+  const [userName,setUserName] = useState("")
     const [user,setUser] = useState({
         username:"",
         password:""
@@ -17,10 +19,12 @@ const Home = () => {
             [e.target.name]:e.target.value,
         })
     }
+    var userDetails = {};
 
     const onSubmit = async (e)=>{
         e.preventDefault();
-       await fetch('https://ecommerce-payment.herokuapp.com/login',{
+        
+     userDetails =  await fetch('https://ecommerce-payment.herokuapp.com/login',{
           method:"POST",
           body: JSON.stringify(user),
           credentials: 'include',
@@ -28,12 +32,22 @@ const Home = () => {
             'Content-type': 'application/json; charset=UTF-8'
           }
       });
-      setRedirect(true);
+  
+      if(userDetails.status == 201)
+      {
+        setUserName(user.username);
+        setRedirect(true);
+      }
+      
       }
 
       if(redirect)
       {
-        router.push("/home");
+        router.push({
+          pathname:'/home',
+          query:{name:userName}
+
+        });
       }
 
   return (

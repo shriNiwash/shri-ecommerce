@@ -1148,3 +1148,11 @@ form input[type="submit"] {
   align-items: center;
   display: inline-grid;
 }
+
+.tab-shri{
+  cursor: pointer;
+  font-weight: 500;
+}
+.tab-shri:hover{
+  color: rgb(86, 9, 219);
+}

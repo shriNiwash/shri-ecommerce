@@ -12,6 +12,7 @@ let Config = {
   eventHandler: {
     onSuccess(payload) {
       console.log(payload);
+      console.log(payload.mobile);
       let data = {
         token: payload.token,
         amount: payload.amount,
@@ -20,10 +21,11 @@ let Config = {
 
       axios
         .post(
-          `http://localhost:3002/payment-verification?token=${payload.token}&amount=${payload.amount}&key=${MyKey.secretKey}`
+          `https://apinextjs.herokuapp.com/payment-verification?token=${payload.token}&amount=${payload.amount}&key=${MyKey.secretKey}`
         )
         .then((response) => {
           console.log(response);
+          alert("Congrats Your Transaction Has be Completed.For Details Please visit My Transactions on Navbar")
         })
         .catch((error) => {
           console.log(error.response);

@@ -6,11 +6,20 @@ import Middle from "./components/Middle";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import Script from 'next/script';
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function Home(props) {
+  const router = useRouter();
+  const [users,setUser] = useState('');
+  useEffect(()=>{
+    console.log(router.query.name);
+    setUser(router.query.name);
+  },[router.query.name]);
+
   return (
     <div>
-      <Navbar />
+      <Navbar Username ={users}/>
       <Head>
         <title>Ecommerce</title>
         <link

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Script from "next/script";
 import { useRouter } from "next/router";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const router = useRouter();
   const logout=async(e)=>{
     e.preventDefault();
@@ -59,19 +59,18 @@ const Navbar = () => {
                   <a className="nav-link active" >Products</a>
                   </Link>
                 </li>
+                <li className="nav-item">
+                 <Link href="/components/transactions">
+                  <a className="nav-link active" >My Transactions</a>
+                  </Link>
+                </li>
               </ul>
               <form className="d-flex" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button className="btn btn-outline-success" id="logout" type="submit">
+                <button className="btn btn-outline-success" id="logout" type="submit" onClick={(e)=>logout(e)}>
                   Search
                 </button>
                 <button className="btn btn-outline-success" id="logout" type="submit" onClick={(e)=>logout(e)}>
-                  LogOut
+                  Log-Out
                 </button>
               </form>
             </div>

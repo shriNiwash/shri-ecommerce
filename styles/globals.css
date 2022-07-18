@@ -1156,3 +1156,18 @@ form input[type="submit"] {
 .tab-shri:hover{
   color: rgb(86, 9, 219);
 }
+
+.transaction{
+  display: flex;
+  justify-content: center;
+
+}
+
+#transaction-button{
+  font-size: 22px;
+}
+
+#transaction-button:hover{
+  color: #000;
+  background-color: #3cbc24;
+}

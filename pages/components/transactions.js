@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Navbar from "./navibar";
-import Footer from "./Footer";
 import Link from "next/link";
 
 export const getStaticProps = async () => {
@@ -26,7 +24,6 @@ const Transactions = ({ data }) => {
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
         ></link>
       </Head>
-      <Navbar />
       <div className="container">
         <table className="table table-bordered">
           <thead>
@@ -60,9 +57,10 @@ const Transactions = ({ data }) => {
             })}
             </tbody>
         </table>
-        
+        <div className="transaction">
+            <Link href="/home"><button className="btn btn-success" id="transaction-button">Back To Home</button></Link>
+        </div>  
       </div>
-      <Footer />
     </>
   );
 };

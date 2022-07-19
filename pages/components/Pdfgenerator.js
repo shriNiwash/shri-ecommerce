@@ -8,8 +8,8 @@ const  GeneratePDF= (props)=>{
     function generate(){
         const doc = new jsPDF();
         doc.autoTable({
-            head:[["Date/Time","Transaction-Id","Amount","Charges","Initiator"]],
-            body:[[datas.token,datas.date,datas.transaction_id,datas.amount,datas.charges,datas.initiator]]
+            head:[["Date/Time","Transaction-Id","Amount","Charges","Initiator","Product-Name"]],
+            body:[[datas.token,datas.date,datas.transaction_id,datas.amount,datas.charges,datas.initiator,datas.product_name]]
         })
         doc.save("table.pdf");
     }

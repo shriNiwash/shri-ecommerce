@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
+import { setGlobalState } from "../../state";
 
 
 const Khalti = dynamic(
@@ -18,7 +19,7 @@ export const getServerSideProps = async (context) => {
     const ids = id.productList;
     console.log(ids);
     const res = await fetch(
-      `https://ecommerce-payment.herokuapp.com/data/${ids}`
+      `http://localhost:3001/data/${ids}`
     );
     const data = await res.json();
     return {
@@ -29,6 +30,7 @@ export const getServerSideProps = async (context) => {
   };
 
 const ProductList = ({data})=>{
+  setGlobalState("productName",data.name);
   const router = useRouter();
     const [Data,setData] = useState('');
     return(<div className="productListing">

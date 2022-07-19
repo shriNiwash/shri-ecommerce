@@ -1001,8 +1001,8 @@ a {
   text-align: center;
 }
 
-
 /* login css */
+
 .err-msg {
 	padding: 10px 15px;
 	background-color: #fff;
@@ -1171,3 +1171,4 @@ form input[type="submit"] {
   color: #000;
   background-color: #3cbc24;
 }
+

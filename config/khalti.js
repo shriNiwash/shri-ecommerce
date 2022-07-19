@@ -7,6 +7,7 @@ import axios from "axios";
 
 export default function Khalti({ records }) {
   const [username] = useGlobalState("username");
+  const [productName] = useGlobalState("productName");
   let Config = {
     // replace this key with yours
     publicKey: MyKey.publicTestKey,
@@ -25,7 +26,7 @@ export default function Khalti({ records }) {
 
         axios
           .post(
-            `https://apinextjs.herokuapp.com/payment-verification?token=${payload.token}&amount=${payload.amount}&key=${MyKey.secretKey}&username=${username}`
+            `https://apinextjs.herokuapp.com/payment-verification?token=${payload.token}&amount=${payload.amount}&key=${MyKey.secretKey}&username=${username}&product_name=${productName}`
           )
           .then((response) => {
             console.log(response);

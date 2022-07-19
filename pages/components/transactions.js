@@ -55,6 +55,7 @@ const Transactions = () => {
               <th scope="col">Initiator</th>
               <th scope="col">transaction_id</th>
               <th scope="col">User</th>
+              <th scope="col">Product-Name</th>
             </tr>
           </thead>
           <tbody>
@@ -72,6 +73,7 @@ const Transactions = () => {
                     <td>{items.initiator}</td>
                     <td>{items.transaction_id}</td>
                     <td>{items.username}</td>
+                    <td>{items.product_name}</td>
                   </tr>
                 </>
               );

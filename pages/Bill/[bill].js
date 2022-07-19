@@ -67,8 +67,8 @@ const Bill = ({data}) => {
                 <td>{data.to_account}</td>
               </tr>
               <tr>
-                <td>Remarks</td>
-                <td>Nothing</td>
+                <td>Product-Name</td>
+                <td>{data.product_name}</td>
               </tr>
             </thead>
           </table>

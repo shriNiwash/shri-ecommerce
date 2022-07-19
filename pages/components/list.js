@@ -3,7 +3,7 @@ import Image from "next/image";
 import Head from "next/head";
 import Navbar from "./navibar";
 import Footer from "./Footer";
-import { useGlobalState } from "../state";
+import { useGlobalState } from "../../state";
 
 export const getServerSideProps = async (context) => {
   const datas = context.req.cookies['jwt-local'];

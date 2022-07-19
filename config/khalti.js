@@ -1,6 +1,6 @@
 import KhaltiCheckout from "khalti-checkout-web";
 import React from "react";
-import { useGlobalState } from "../pages/state";
+import { useGlobalState } from "../state";
 import MyKey from "./khaltikey";
 import axios from "axios";
 

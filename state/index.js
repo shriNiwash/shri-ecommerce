@@ -4,4 +4,4 @@ const {setGlobalState,useGlobalState} = createGlobalState({
     username: 'Geuest',
 });
 
-export{useGlobalState,setGlobalState};
+export {useGlobalState,setGlobalState};

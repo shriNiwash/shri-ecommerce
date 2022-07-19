@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from 'next/link';
 import Script from "next/script";
 import { useRouter } from "next/router";
-import { useGlobalState } from "../state";
+import { useGlobalState } from "../../state";
 
 const Navbar = (props) => {
   const [username] = useGlobalState("username");

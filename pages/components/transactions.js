@@ -1,8 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useGlobalState } from "../state";
-
+import { useGlobalState } from "../../state";
 // export const getStaticProps = async () => {
 //   const [username] = useGlobalState("username");
 //   const resp = await fetch(`https://apinextjs.herokuapp.com/getTransactions/${username}`, {

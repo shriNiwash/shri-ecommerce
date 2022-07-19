@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from 'next/link';
+import Link from "next/link";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import { useGlobalState } from "../../state";
@@ -7,17 +7,14 @@ import { useGlobalState } from "../../state";
 const Navbar = (props) => {
   const [username] = useGlobalState("username");
   const router = useRouter();
-  const logout=async(e)=>{
+  const logout = async (e) => {
     e.preventDefault();
-    const resp = await fetch("https://ecommerce-payment.herokuapp.com/logout",{
-      method:"POST",
-      credentials: 'include',
-  }
-
-    );
-    router.push("/");
-
-  }
+    const resp = await fetch("https://ecommerce-payment.herokuapp.com/logout", {
+      method: "POST",
+      credentials: "include",
+    });
+    router.push("/index");
+  };
   return (
     <>
       <Head>
@@ -48,30 +45,44 @@ const Navbar = (props) => {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-               <li className="nav-item">
-                  <Link href="/home"><a className="nav-link active" aria-current="page" > Home</a></Link>
-                </li>
                 <li className="nav-item">
-                 <Link href="/product">
-                  <a className="nav-link active" >Books</a>
+                  <Link href="/home">
+                    <a className="nav-link active" aria-current="page">
+                      {" "}
+                      Home
+                    </a>
                   </Link>
                 </li>
                 <li className="nav-item">
-                 <Link href="/components/list">
-                  <a className="nav-link active" >Products</a>
+                  <Link href="/product">
+                    <a className="nav-link active">Books</a>
                   </Link>
                 </li>
                 <li className="nav-item">
-                 <Link href="/components/transactions">
-                  <a className="nav-link active" >My Transactions</a>
+                  <Link href="/components/list">
+                    <a className="nav-link active">Products</a>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link href="/components/transactions">
+                    <a className="nav-link active">My Transactions</a>
                   </Link>
                 </li>
               </ul>
               <form className="d-flex" role="search">
-                <button className="btn btn-outline-success" id="logout" type="submit" onClick={(e)=>logout(e)}>
+                <button
+                  className="btn btn-outline-success"
+                  id="logout"
+                  type="submit"
+                  onClick={(e) => logout(e)}
+                >
                   {username}
                 </button>
-                <button className="btn btn-outline-success" id="logout" type="submit">
+                <button
+                  className="btn btn-outline-success"
+                  id="logout"
+                  type="submit"
+                >
                   Logout
                 </button>
               </form>

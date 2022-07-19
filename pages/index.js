@@ -2,6 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from 'next/router'
+import { setGlobalState,useGlobalState } from "./state";
+
+
 
 
 const Home = () => {
@@ -36,6 +39,7 @@ const Home = () => {
       if(userDetails.status == 201)
       {
         setUserName(user.username);
+        setGlobalState("username",user.username);
         setRedirect(true);
       }
       

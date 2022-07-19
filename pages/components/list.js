@@ -3,6 +3,7 @@ import Image from "next/image";
 import Head from "next/head";
 import Navbar from "./navibar";
 import Footer from "./Footer";
+import { useGlobalState } from "../state";
 
 export const getServerSideProps = async (context) => {
   const datas = context.req.cookies['jwt-local'];
@@ -27,6 +28,8 @@ export const getServerSideProps = async (context) => {
 };
 
 const List = ({ data }) => {
+  const [username] = useGlobalState("username");
+  console.log(username);
   return (
     <>
       <Head>

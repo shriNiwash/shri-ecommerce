@@ -1,21 +1,41 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useGlobalState } from "../state";
 
-export const getStaticProps = async () => {
-  const resp = await fetch("https://apinextjs.herokuapp.com/getTransactions", {
-    method: "GET",
-    credentials: "include",
-  });
-  const data = await resp.json();
+// export const getStaticProps = async () => {
+//   const [username] = useGlobalState("username");
+//   const resp = await fetch(`https://apinextjs.herokuapp.com/getTransactions/${username}`, {
+//     method: "GET",
+//     credentials: "include",
+//   });
+//   const data = await resp.json();
 
-  return {
-    props: {
-      data,
-    },
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// };
+
+const Transactions = () => {
+  const [username] = useGlobalState("username");
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    getTransaction();
+  }, [username]);
+
+  const getTransaction = async () => {
+    const resp = await fetch(
+      `https://apinextjs.herokuapp.com/getTransactions/${username}`,
+      {
+        method: "GET",
+      }
+    );
+    const datas = await resp.json();
+    setData(datas);
   };
-};
-
-const Transactions = ({ data }) => {
   return (
     <>
       <Head>
@@ -35,31 +55,37 @@ const Transactions = ({ data }) => {
               <th scope="col">Date</th>
               <th scope="col">Initiator</th>
               <th scope="col">transaction_id</th>
+              <th scope="col">User</th>
             </tr>
           </thead>
-          <tbody >
-          
+          <tbody>
             {data?.map((items) => {
               return (
                 <>
-                
                   <tr key={items._id}>
-                    <Link href={`/Bill/${items.token}`}><td className="tab-shri">{items.token}</td></Link>
+                    <Link href={`/Bill/${items.token}`}>
+                      <td className="tab-shri">{items.token}</td>
+                    </Link>
                     <td>{items.transaction_status}</td>
                     <td>{items.amount}</td>
                     <td>{items.charges}</td>
                     <td>{items.date}</td>
                     <td>{items.initiator}</td>
                     <td>{items.transaction_id}</td>
+                    <td>{items.username}</td>
                   </tr>
                 </>
               );
             })}
-            </tbody>
+          </tbody>
         </table>
         <div className="transaction">
-            <Link href="/home"><button className="btn btn-success" id="transaction-button">Back To Home</button></Link>
-        </div>  
+          <Link href="/home">
+            <button className="btn btn-success" id="transaction-button">
+              Back To Home
+            </button>
+          </Link>
+        </div>
       </div>
     </>
   );

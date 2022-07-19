@@ -2,8 +2,10 @@ import Head from "next/head";
 import Link from 'next/link';
 import Script from "next/script";
 import { useRouter } from "next/router";
+import { useGlobalState } from "../state";
 
 const Navbar = (props) => {
+  const [username] = useGlobalState("username");
   const router = useRouter();
   const logout=async(e)=>{
     e.preventDefault();
@@ -67,10 +69,10 @@ const Navbar = (props) => {
               </ul>
               <form className="d-flex" role="search">
                 <button className="btn btn-outline-success" id="logout" type="submit" onClick={(e)=>logout(e)}>
-                  Search
+                  {username}
                 </button>
-                <button className="btn btn-outline-success" id="logout" type="submit" onClick={(e)=>logout(e)}>
-                  Log-Out
+                <button className="btn btn-outline-success" id="logout" type="submit">
+                  Logout
                 </button>
               </form>
             </div>

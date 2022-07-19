@@ -74,7 +74,7 @@ const Navbar = (props) => {
                   className="btn btn-outline-success"
                   id="logout"
                   type="submit"
-                  onClick={(e) => logout(e)}
+                  
                 >
                   {username}
                 </button>
@@ -82,6 +82,7 @@ const Navbar = (props) => {
                   className="btn btn-outline-success"
                   id="logout"
                   type="submit"
+                  onClick={(e) => logout(e)}
                 >
                   Logout
                 </button>

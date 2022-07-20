@@ -37,7 +37,7 @@ const ProductList = ({data})=>{
     <Navbar />
         <div className="container" id="productlist">
         <h1>Product Details</h1>
-        <Image src={`/${data.image}`} height={400} width={500}></Image>
+        <Image src={`/${data.image}`} height={400} width={500} alt="Product Photoes"></Image>
 
             <div>
                 <label id="productname">Name:</label>

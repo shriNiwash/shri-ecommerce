@@ -1,8 +1,10 @@
+
+
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from 'next/router'
-import { setGlobalState,useGlobalState } from "../state";
+// import { setGlobalState } from "../../state";
 
 
 
@@ -27,7 +29,7 @@ const Home = () => {
     const onSubmit = async (e)=>{
         e.preventDefault();
         
-     userDetails =  await fetch('https://ecommerce-payment.herokuapp.com/login',{
+     userDetails =  await fetch('https://ecommerce-payment.herokuapp.com/admin-login',{
           method:"POST",
           body: JSON.stringify(user),
           credentials: 'include',
@@ -39,8 +41,11 @@ const Home = () => {
       if(userDetails.status == 201)
       {
         setUserName(user.username);
-        setGlobalState("username",user.username);
+        // setGlobalState("username",user.username);
         setRedirect(true);
+      }
+      else{
+        alert("Sorry You are Not an Admin");
       }
       
       }
@@ -48,20 +53,21 @@ const Home = () => {
       if(redirect)
       {
         router.push({
-          pathname:'/home',
-          query:{name:userName}
+          pathname:'/admin-panel',
 
         });
       }
 
+      
   return (
     <>
     <Head>
-        <title>Login Page</title>
+        <title>Admin panel</title>
     </Head>
       <div className="form-karan">
         <form action="/login" method="post" onSubmit={(e)=>onSubmit(e)} className="form-style">
           <div className="form-group">
+      <h1>Welcome To the Admin Panel</h1>
             <label>Username:</label>
             <input
               type="text"
@@ -84,9 +90,8 @@ const Home = () => {
             />
           </div>
           <div>
-            <input type="submit" value="Login"  /><br /><br />
-            <Link href="/components/Registration"><input type="submit" value="SignUp" /></Link><br />
-            <Link href="/admin-panel/adminlogin"><input type="submit" value="Admin-Panel" /></Link>
+            <input type="submit" value="Login"  />
+            <h3>Authorized Login Only.. All right reserved</h3>
           </div>
         </form>
       </div>

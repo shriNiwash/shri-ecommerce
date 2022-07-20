@@ -90,7 +90,8 @@ const Home = () => {
             />
           </div>
           <div>
-            <input type="submit" value="Login"  />
+            <input type="submit" value="Login"  /><br /><br />
+            <Link href="/"><input type="submit" value="E-Commerce-Login" /></Link>
             <h3>Authorized Login Only.. All right reserved</h3>
           </div>
         </form>

@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 import Script from "next/script";
+import { useRouter } from "next/router";
 const Admin = () => {
+    const router = useRouter();
     const logout = async (e) => {
         e.preventDefault();
         const resp = await fetch("https://ecommerce-payment.herokuapp.com/logout", {

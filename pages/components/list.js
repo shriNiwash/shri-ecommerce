@@ -1,13 +1,13 @@
 import Link from "next/link";
-import Image from "next/image";
+import { Image } from "cloudinary-react";
 import Head from "next/head";
 import Navbar from "./navibar";
 import Footer from "./Footer";
 import { useGlobalState } from "../../state";
 
 export const getServerSideProps = async (context) => {
-  const datas = context.req.cookies['jwt-local'];
-  console.log(context.req.cookies['jwt-local']);
+  const datas = context.req.cookies["jwt-local"];
+  console.log(context.req.cookies["jwt-local"]);
   const myHeaders = new Headers({
     "Content-Type": "application/json",
     Authorization: `Bearer ${datas}`,
@@ -46,7 +46,8 @@ const List = ({ data }) => {
             <>
               <div className="card" id="cardData" key={list._id}>
                 <Image
-                  src={`/${list.image}`}
+                  cloudName="deam2hdcg"
+                  publicId={`${list.image}`}
                   width="100"
                   height="300"
                   className="card-img-top"

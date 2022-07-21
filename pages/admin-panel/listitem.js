@@ -1,11 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
-import Admin from './admin-navbar';
-
+import { Image } from "cloudinary-react";
+import Admin from "./admin-navbar";
+import axios from "axios";
+import { useRouter } from "next/router";
+import Link from "next/link";
 export const getServerSideProps = async () => {
   const resp = await fetch("https://ecommerce-payment.herokuapp.com/list");
   const data = await resp.json();
-  console.log("hello", data);
+  console.log(data);
 
   return {
     props: {
@@ -15,9 +17,20 @@ export const getServerSideProps = async () => {
 };
 
 const Listitem = ({ data }) => {
+  const router = useRouter();
+
+  async function handleDelete(id) {
+    alert(`Are you sure want to delete ${id}`);
+    const deleted = await axios.delete(
+      `https://ecommerce-payment.herokuapp.com/list/${id}`
+    );
+    console.log(deleted);
+    router.push("/admin-panel/listitem");
+  }
+
   return (
     <>
-    <Admin />
+      <Admin />
       <Head>
         <title>Admin-Panel</title>
         <link
@@ -29,28 +42,44 @@ const Listitem = ({ data }) => {
         <table className="table table-striped">
           <thead>
             <tr>
-            <th scope="col">ID</th>
+              <th scope="col">ID</th>
               <th scope="col">Name</th>
               <th scope="col">Title</th>
               <th scope="col">Price</th>
               <th scope="col">Description</th>
               <th scope="col">Image</th>
               <th scope="col">Operations</th>
-
             </tr>
           </thead>
           <tbody>
             {data?.map((item) => {
               return (
                 <>
-                  <tr>
-                  <td>{item._id}</td>
+                  <tr key={item._id}>
+                    <td>{item._id}</td>
                     <td>{item.name}</td>
                     <td>{item.title}</td>
                     <td>{item.price}</td>
                     <td>{item.description}</td>
-                    <td><Image src={`/${item.image}`} height={100} width={100}></Image></td>
-                    <td><button className="btn btn-primary">Update</button>{" "}<button className="btn btn-primary">Delete</button></td>
+                    <td>
+                      <Image
+                        cloudName="deam2hdcg"
+                        publicId={`${item.image}`}
+                        height={100}
+                        width={100}
+                      ></Image>
+                    </td>
+                    <td>
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => handleDelete(item._id)}
+                      >
+                        Delete
+                      </button>{" "}
+                      <Link href={`/admin-panel/update/${item._id}`}>
+                        <button className="btn btn-primary">Update</button>
+                      </Link>
+                    </td>
                   </tr>
                 </>
               );

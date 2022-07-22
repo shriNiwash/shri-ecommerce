@@ -20,12 +20,18 @@ const Listitem = ({ data }) => {
   const router = useRouter();
 
   async function handleDelete(id) {
-    alert(`Are you sure want to delete ${id}`);
-    const deleted = await axios.delete(
-      `https://ecommerce-payment.herokuapp.com/list/${id}`
-    );
-    console.log(deleted);
-    router.push("/admin-panel/listitem");
+    if(window.confirm(`Are you sure want to Delete ${id}`) == true){
+      const deleted = await axios.delete(
+        `https://ecommerce-payment.herokuapp.com/list/${id}`
+      );
+      console.log(deleted);
+      router.push("/admin-panel/listitem");
+
+    }
+    else{
+      return false;
+    }
+
   }
 
   return (

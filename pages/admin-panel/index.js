@@ -31,17 +31,17 @@ const Insert = () => {
       [e.target.name]: e.target.value,
     });
   }
+  const {name,title,price,description} = item;
+  const insertData = {
+      name,
+      title,
+      price,
+      description,
+      image:Image,
+  }
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const {name,title,price,description} = item;
-    const insertData = {
-        name,
-        title,
-        price,
-        description,
-        image:Image,
-    }
     axios.post("https://ecommerce-payment.herokuapp.com/insert",insertData)
     .then((response)=>{
         setFalseState(true);

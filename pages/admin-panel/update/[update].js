@@ -110,7 +110,7 @@ const Update = ({ ids }) => {
             <input
               type="text"
               name="title"
-              id="title"
+              id="product-name"
               placeholder="Enter The title"
               required
               onChange={(e) => onTextFild(e)}
@@ -122,7 +122,7 @@ const Update = ({ ids }) => {
             <input
               type="number"
               name="price"
-              id="price"
+              id="product-name"
               placeholder="Enter The Price"
               required
               onChange={(e) => onTextFild(e)}
@@ -134,7 +134,7 @@ const Update = ({ ids }) => {
             <input
               type="file"
               name="image"
-              id="image"
+              id="product-name"
               placeholder="Upload File Here"
               onChange={(e) => setFile(e.target.files)}
             />
@@ -144,7 +144,7 @@ const Update = ({ ids }) => {
             <input
               type="text"
               name="description"
-              id="description"
+              id="product-name"
               placeholder="Describe About the Product"
               required
               onChange={(e) => onTextFild(e)}
@@ -153,7 +153,7 @@ const Update = ({ ids }) => {
           </div>
 
           <div>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Save" id="admin-panel-button" />
           </div>
         </form>
       </div>

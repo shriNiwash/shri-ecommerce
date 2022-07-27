@@ -1,5 +1,6 @@
 html,
 body {
+  background-color: #FFB300;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -1021,12 +1022,6 @@ form .form-group {
     text-align: cener;
 }
 
-form label {
-	display: block;
-	color:rgb(16, 15, 15);
-	font-size: 14px;
-	margin-bottom: 5px;
-}
 
 form input {
 	appearance: none;
@@ -1035,7 +1030,7 @@ form input {
 	border: none;
 }
 
-form input:not([type="submit"]) {
+#product-name {
 	display: block;
 	width: 100%;
 	padding: 15px;
@@ -1048,16 +1043,32 @@ form input:not([type="submit"]) {
 	font-weight: 300;
 }
 
-form input:not([type="submit"])::placeholder {
+#product-name::placeholder{
+  color: #CCC;
+}
+
+#product-name:focus {
+  background-color: #fff;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* 
+form input:not([type="submit"]) {
+
+} */
+
+/* form input:not([type="submit"])::placeholder {
 	color: #CCC;
 }
 
 form input:not([type="submit"]):focus, form input:not([type="submit"]):valid {
 	background-color: #fff;
 	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
+} */
 
-form input[type="submit"] {
+/* form input[type="submit"] {
 	display: block;
 	width: 100%;
 	padding: 15px;
@@ -1070,7 +1081,23 @@ form input[type="submit"] {
 	font-weight: 700;
 	cursor: pointer;
 
+} */
+
+#admin-panel-button{
+  display: block;
+	width: 100%;
+	padding: 15px;
+	border-radius: 8px;
+	background-color: #2F4960;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+	transition: 0.4s;
+	color: #FFF;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
 }
+
+
 
 .h1{
 	text-align: center;
@@ -1172,3 +1199,115 @@ form input[type="submit"] {
   background-color: #3cbc24;
 }
 
+
+
+/* css for login page advance */
+
+.shri_login {
+  max-width: 440px;
+  padding: 0 20px;
+  margin: 170px auto;
+}
+
+.wrapper {
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.wrapper .tittle {
+  line-height: 80px;
+  background-color: #002147;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  font-size: 25px;
+  color: #fff;
+  font-weight: 600px;
+}
+
+.wrapper form {
+  padding: 30px 25px 25px 25px;
+}
+
+.wrapper form .row {
+  height: 45px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.wrapper form .row input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 60px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+form .row input:focus {
+  border-color: #002147;
+  box-shadow: inset 0px 0px 2px 2px rgba(188, 164, 26, 0.25);
+}
+
+.wrapper form .row i {
+  position: absolute;
+  width: 47px;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+  background-color: #002147;
+  border: 1px solid #002147;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper form .pass {
+  margin: -8px 0 20px 0;
+
+}
+
+.wrapper form .pass a {
+  color: #FFB300;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.wrapper form .pass a:hover {
+  text-decoration: underline;
+}
+
+.wrapper form .button input {
+  color: rgb(248, 244, 244);
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background-color: #002147;
+  border: 1px solid #002147;
+  cursor: pointer;
+}
+
+form .button input:hover {
+  color: black;
+  background: #FFB300;
+}
+
+.wrapper form .signup-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 17px;
+
+}
+
+.wrapper form .signup-link a {
+  color: #FFB300;
+
+  text-decoration: none;
+}
+
+form .signup-link a:hover {
+  text-decoration: underline;
+}

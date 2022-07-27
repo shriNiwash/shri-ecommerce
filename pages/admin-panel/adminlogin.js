@@ -52,51 +52,111 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Admin panel</title>
+        <title>Admin-Panel</title>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
       </Head>
-      <div className="form-karan">
-        <form
-          action="/login"
-          method="post"
-          onSubmit={(e) => onSubmit(e)}
-          className="form-style"
-        >
-          <div className="form-group">
-            <h1>Welcome To the Admin Panel</h1>
-            <label>Username:</label>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Enter your username"
-              required
-              onChange={(e) => onTextFiled(e)}
-            />
+      <div className="shri_login" id="shri_login">
+        <div className="wrapper">
+          <div className="tittle">
+            <span>Admin Login</span>
           </div>
-          <div className="form-group">
-            <label>Password:</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Enter your password"
-              required
-              onChange={(e) => onTextFiled(e)}
-            />
-          </div>
-          <div>
-            <input type="submit" value="Login" />
-            <br />
-            <br />
-            <Link href="/">
-              <input type="submit" value="E-Commerce-Login" />
-            </Link>
-            <h3>Authorized Login Only.. All right reserved</h3>
-          </div>
-        </form>
+          <form action="/login" method="post" onSubmit={(e) => onSubmit(e)}>
+            <div className="row">
+              <i className="fa fa-user"></i>
+              <input
+                type="text"
+                placeholder="Email or UserName"
+                required
+                onChange={(e) => onTextFiled(e)}
+                name="username"
+                id="username"
+              />
+            </div>
+            <div className="row">
+              <i className="fa fa-lock"></i>
+              <input
+                type="password"
+                placeholder="password"
+                name="password"
+                id="password"
+                required
+                onChange={(e) => onTextFiled(e)}
+              />
+            </div>
+            <div className="pass">
+              <a href="#">Forgot Password?</a>
+            </div>
+            <div className="row button">
+              <input type="submit" value="Login" />
+            </div>
+            <div className="signup-link">
+              <Link href="/">
+                <a>Back-to-Ecommerce-Login</a>
+              </Link>
+              <br />
+              <h3>Authorized Login Only.. All right reserved</h3>
+            </div>
+          </form>
+        </div>
       </div>
     </>
   );
 };
 
 export default Home;
+
+// return(<>
+//    <Head>
+//       <title>Admin-Panel</title>
+//       <link
+//         rel="stylesheet"
+//         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+//       />
+//     </Head>
+//     <div className="shri_login" id="shri_login">
+//       <div className="wrapper">
+//         <div className="tittle">
+//           <span>Login Form</span>
+//         </div>
+//         <form action="/login" method="post" onSubmit={(e) => onSubmit(e)}>
+//           <div className="row">
+//             <i className="fa fa-user"></i>
+//             <input
+//               type="text"
+//               placeholder="Email or UserName"
+//               required
+//               onChange={(e) => onTextFiled(e)}
+//               name="username"
+//               id="username"
+//             />
+//           </div>
+//           <div className="row">
+//             <i className="fa fa-lock"></i>
+//             <input
+//               type="password"
+//               placeholder="password"
+//               name="password"
+//               id="password"
+//               required
+//               onChange={(e) => onTextFiled(e)}
+//             />
+//           </div>
+//           <div className="pass">
+//             <a href="#">Forgot Password?</a>
+//           </div>
+//           <div className="row button">
+//             <input type="submit" value="Login" />
+//           </div>
+//           <div className="signup-link">
+//             <Link href="/">
+//               <a>Back-to-Ecommerce-Login</a>
+//             </Link><br />
+//             <h3>Authorized Login Only.. All right reserved</h3>
+//           </div>
+//         </form>
+//       </div>
+//     </div>
+// </>)

@@ -1,13 +1,14 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Link from "next/link";
 
 const Registration = () => {
   const router = useRouter();
   const [user, setUser] = useState({
     username: "",
     password: "",
-    role:""
+    role: "",
   });
   const [redirect, setRedirect] = useState(false);
 
@@ -30,56 +31,68 @@ const Registration = () => {
     setRedirect(true);
   };
 
-  if(redirect)
-  {
+  if (redirect) {
     router.push("/");
   }
-  
 
   return (
     <>
       <Head>
         <title>Login Page</title>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
       </Head>
-      <div>
-        <form action="/login" method="post" onSubmit={(e) => onSubmit(e)}>
-          <div className="form-group">
-            <label>Username:</label>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Enter your username"
-              required
-              onChange={(e) => onTextFiled(e)}
-            />
+      <div className="shri_login" id="shri_login">
+        <div className="wrapper">
+          <div className="tittle">
+            <span>Signup Form</span>
           </div>
-          <div className="form-group">
-            <label>Password:</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Enter your password"
-              required
-              onChange={(e) => onTextFiled(e)}
-            />
+          <form action="/login" method="post" onSubmit={(e) => onSubmit(e)}>
+            <div className="row">
+              <i className="fa fa-user"></i>
+              <input
+                type="text"
+                placeholder="Email or UserName"
+                required
+                onChange={(e) => onTextFiled(e)}
+                name="username"
+                id="username"
+              />
+            </div>
+            <div className="row">
+              <i className="fa fa-lock"></i>
+              <input
+                type="password"
+                placeholder="Create New Password"
+                name="password"
+                id="password"
+                required
+                onChange={(e) => onTextFiled(e)}
+              />
+            </div>
+            <div className="row">
+              <i className="fa fa-book"></i>
+              <input
+                type="text"
+                placeholder="Assign your role here"
+                name="role"
+                id="password"
+                required
+                onChange={(e) => onTextFiled(e)}
+              />
+            </div>
+            <div className="row button">
+              <input type="submit" value="Sign-Up" />
+            </div>
+            <div className="signup-link">
+            <Link href="/">
+              <a>Back-to-Login</a>
+            </Link>
           </div>
-          <div className="form-group">
-            <label>Role:</label>
-            <input
-              type="text"
-              name="role"
-              id="password"
-              placeholder="Asign Your Role Please"
-              required
-              onChange={(e) => onTextFiled(e)}
-            />
-          </div>
-          <div>
-            <input type="submit" value="SING-UP" />
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </>
   );

@@ -59,7 +59,7 @@ const Products = ({ data }) => {
                   <h6 className="card-title">{list.volumeInfo.subtitle}</h6>
                   <p className="card-text">{list.volumeInfo.publisher}</p>
                   <a className="btn btn-primary">Detail</a>
-                  <Link href="/Payment"><a className="btn btn-primary" id="addtocard">Add to Cart</a></Link>
+                  <Link href={`/book/${1}?selfLink=${list.selfLink}`}><a className="btn btn-primary" id="addtocard">Add to Cart</a></Link>
                 </div>
               </div>
             </>

@@ -11,11 +11,12 @@ const Khalti = dynamic(
 );
 
 const Payment = ()=>{
+  const data = 100;
     return(<div className="contai">
         <Navbar />
         <div className="container">
             <h1>Pay via Khalti</h1>
-            <Khalti />
+            <Khalti records={data * 100}/>
         </div>
     </div>)
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Image } from "cloudinary-react";
 import Head from "next/head";
 import Navbar from "./navibar";
-import Footer from "./Footer";
+import Footer from "./footers";
 import { useGlobalState } from "../../state";
 
 export const getServerSideProps = async (context) => {

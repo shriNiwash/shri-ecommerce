@@ -1,5 +1,5 @@
 import Navbar from "../components/navibar";
-import Footer from "../components/Footer";
+import Footer from "../components/footers";
 import { Image } from "cloudinary-react";
 import { useState } from "react";
 import dynamic from "next/dynamic";

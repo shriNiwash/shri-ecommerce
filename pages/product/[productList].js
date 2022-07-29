@@ -38,6 +38,7 @@ const ProductList = ({ data }) => {
       <div className="container" id="productlist">
         <h1>Product Details</h1>
         <Image
+        className="product_image_data"
           cloudName="deam2hdcg"
           publicId={`${data.image}`}
           height={400}

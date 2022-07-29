@@ -21,14 +21,34 @@ const Registration = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await fetch("https://ecommerce-payment.herokuapp.com/register", {
+   const registration_result =  await fetch("https://ecommerce-payment.herokuapp.com/register", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
-    setRedirect(true);
+    // setRedirect(true);
+    if(registration_result.statusText == 'Bad Request')
+    {
+      if(window.confirm("The User Already Exists ❗ Do you want to visit Login page?") == true)
+      {
+        setRedirect(true);
+      }
+      else{
+        return false;
+      }
+    }
+    else{
+      if(window.confirm("Thanks for Your Registration 😊") ==  true)
+      {
+        setRedirect(true);
+      }
+      else{
+        return false;
+      }
+      
+    }
   };
 
   if (redirect) {

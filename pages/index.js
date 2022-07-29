@@ -6,6 +6,7 @@ import { setGlobalState, useGlobalState } from "../state";
 
 const Home = () => {
   const router = useRouter();
+  const [Loading,setLoading] = useState(false);
   const [userName, setUserName] = useState("");
   const [user, setUser] = useState({
     username: "",
@@ -37,6 +38,9 @@ const Home = () => {
       setUserName(user.username);
       setGlobalState("username", user.username);
       setRedirect(true);
+    }
+    else{
+      window.confirm("Invaid UserId or Password");
     }
   };
 

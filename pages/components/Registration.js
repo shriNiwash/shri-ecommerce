@@ -2,52 +2,42 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Link from "next/link";
+import { useForm } from "react-hook-form";
 
 const Registration = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const router = useRouter();
-  const [user, setUser] = useState({
-    username: "",
-    password: "",
-    role: "",
-  });
   const [redirect, setRedirect] = useState(false);
 
-  function onTextFiled(e) {
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value,
-    });
-  }
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-   const registration_result =  await fetch("https://ecommerce-payment.herokuapp.com/register", {
+  const onSubmit = async (data) => {
+    console.log(data);
+    const registration_result = await fetch("https://ecommerce-payment.herokuapp.com/register", {
       method: "POST",
-      body: JSON.stringify(user),
+      body: JSON.stringify(data),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
-    // setRedirect(true);
-    if(registration_result.statusText == 'Bad Request')
-    {
-      if(window.confirm("The User Already Exists ❗ Do you want to visit Login page?") == true)
-      {
+    if (registration_result.statusText == "Bad Request") {
+      if (
+        window.confirm(
+          "The User Already Exists ❗ Do you want to visit Login page?"
+        ) == true
+      ) {
         setRedirect(true);
-      }
-      else{
+      } else {
         return false;
       }
-    }
-    else{
-      if(window.confirm("Thanks for Your Registration 😊") ==  true)
-      {
+    } else {
+      if (window.confirm("Thanks for Your Registration 😊") == true) {
         setRedirect(true);
-      }
-      else{
+      } else {
         return false;
       }
-      
     }
   };
 
@@ -69,18 +59,23 @@ const Registration = () => {
           <div className="tittle">
             <span>Signup Form</span>
           </div>
-          <form action="/login" method="post" onSubmit={(e) => onSubmit(e)}>
+          <form action="/login" method="post" onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
               <i className="fa fa-user"></i>
               <input
                 type="text"
-                placeholder="Email or UserName"
+                placeholder="UserName"
                 required
-                onChange={(e) => onTextFiled(e)}
+                {...register("username", { minLength: 5 })}
                 name="username"
                 id="username"
               />
+              <small>
+                {" "}
+                {errors.username && "Lenght should be more than 5 characters"}
+              </small>
             </div>
+            <br />
             <div className="row">
               <i className="fa fa-lock"></i>
               <input
@@ -89,9 +84,14 @@ const Registration = () => {
                 name="password"
                 id="password"
                 required
-                onChange={(e) => onTextFiled(e)}
+                {...register("password", { minLength: 8 })}
               />
+              <small>
+                {" "}
+                {errors.password && "Password should be more than 8 characters"}
+              </small>
             </div>
+            <br />
             <div className="row">
               <i className="fa fa-book"></i>
               <input
@@ -100,17 +100,18 @@ const Registration = () => {
                 name="role"
                 id="password"
                 required
-                onChange={(e) => onTextFiled(e)}
+                {...register("role")}
               />
             </div>
+            <br />
             <div className="row button">
               <input type="submit" value="Sign-Up" />
             </div>
             <div className="signup-link">
-            <Link href="/">
-              <a>Back-to-Login</a>
-            </Link>
-          </div>
+              <Link href="/">
+                <a>Back-to-Login</a>
+              </Link>
+            </div>
           </form>
         </div>
       </div>

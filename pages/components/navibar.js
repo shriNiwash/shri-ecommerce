@@ -6,6 +6,13 @@ import { useGlobalState } from "../../state";
 
 const Navbar = (props) => {
   const [username] = useGlobalState("username");
+  // var username = "";
+  // const data = localStorage.getItem("username");
+  // if(data.length !== 0)
+  // {
+  //   username = localStorage.getItem("username");
+  // }
+  // const username = localStorage.getItem("username");
   const router = useRouter();
   const logout = async (e) => {
     e.preventDefault();
@@ -70,14 +77,7 @@ const Navbar = (props) => {
                 </li>
               </ul>
               <form className="d-flex" role="search">
-                <button
-                  className="btn btn-outline-success"
-                  id="logout"
-                  type="submit"
-                  
-                >
-                  {username}
-                </button>
+              <h6 className="navbar-button-name">{username}</h6>
                 <button
                   className="btn btn-outline-success"
                   id="logout"

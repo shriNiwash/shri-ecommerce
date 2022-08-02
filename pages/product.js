@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Navbar from "./components/navibar";
 import Link from "next/link";
+import Footer from './components/footers';
 
 export const getStaticProps = async () => {
   const res = await fetch(
@@ -27,20 +28,6 @@ const Products = ({ data }) => {
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
         ></link>
       </Head>
-      <div className="d-flex align-content-start flex-wrap container">
-        <input
-          type="text"
-          name="search-items"
-          id="search-items"
-          className="form-control"
-        />
-        <input
-          type="submit"
-          name="submit"
-          id="submit_button"
-          className="btn btn-success my-2"
-        />
-      </div>
 
       <div className="d-flex align-content-start flex-wrap container">
         {data.map((list) => {
@@ -66,6 +53,7 @@ const Products = ({ data }) => {
           );
         })}
       </div>
+      <Footer />
     </>
   );
 };

@@ -228,7 +228,7 @@ const BodyPart = () => {
           <small>The Mi Smart Band 4 features a 39.9% larger
             (then Mi Band 3) AMOLED color full-touch display width
             adjustable brightness, so everything is clear as can be.
-          </small>
+          </small><br /><br />
           <a href="" className="btn-firstpage">Buy Now &#8594;</a>
         </div>
       </div>

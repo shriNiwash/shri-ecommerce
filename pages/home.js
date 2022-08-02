@@ -49,7 +49,6 @@ export default function Home(props) {
               </a>
             </div>
             <div className="col-sm-6 second-row">
-              {/* <img src="image1.png" alt="photo" id="body-image" /> */}
               <Image src="/image1.png" height={636} width={648} alt="photo"></Image>
             </div>
           </div>

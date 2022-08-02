@@ -10,8 +10,8 @@ const Footer = () => {
               <h3>Download Our App</h3>
               <p>Download App for Android and ios Mobile phone.</p>
               <div className="app-logo">
-                <Image src="/image/play-store.png" height={41} width={140} alt="footer-image"></Image>
-                <Image src="/image/app-store.png" height={41} width={140} alt="footer-image"></Image>
+                <Image src="/image/play-store.png" height={41} width={140} alt="footer-image" className="footer-image-size"></Image><br />
+                <Image src="/image/app-store.png" height={41} width={140} alt="footer-image" className="footer-image-size"></Image>
               </div>
             </div>
             <div className="footer-col-2">

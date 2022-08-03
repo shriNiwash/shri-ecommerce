@@ -2,17 +2,11 @@ import Head from "next/head";
 import Link from "next/link";
 import Script from "next/script";
 import { useRouter } from "next/router";
-import { useGlobalState } from "../../state";
+import Cookies from 'js-cookie';
+
 
 const Navbar = (props) => {
-  const [username] = useGlobalState("username");
-  // var username = "";
-  // const data = localStorage.getItem("username");
-  // if(data.length !== 0)
-  // {
-  //   username = localStorage.getItem("username");
-  // }
-  // const username = localStorage.getItem("username");
+  const username = Cookies.get("username");
   const router = useRouter();
   const logout = async (e) => {
     e.preventDefault();
@@ -20,7 +14,8 @@ const Navbar = (props) => {
       method: "POST",
       credentials: "include",
     });
-    router.push("/index");
+    Cookies.remove("username");
+    router.push("/");
   };
   return (
     <>

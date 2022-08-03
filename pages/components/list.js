@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { Image } from "cloudinary-react";
 import Head from "next/head";
-import Navbar from "./navibar";
 import Footer from "./footers";
-import { useGlobalState } from "../../state";
+import dynamic from 'next/dynamic';
+const Navbar = dynamic(
+  () => import('../components/navibar'),
+  { ssr: false }
+)
 
 export const getServerSideProps = async (context) => {
   const datas = context.req.cookies["jwt-local"];
-  console.log(context.req.cookies["jwt-local"]);
   const myHeaders = new Headers({
     "Content-Type": "application/json",
     Authorization: `Bearer ${datas}`,
@@ -28,8 +30,6 @@ export const getServerSideProps = async (context) => {
 };
 
 const List = ({ data }) => {
-  const [username] = useGlobalState("username");
-  console.log(username);
   return (
     <>
       <Head>
@@ -44,7 +44,7 @@ const List = ({ data }) => {
         {data?.map((list) => {
           return (
             <>
-              <div className="card" id="cardData" key={list._id}>
+              <div className="card" id="cardData" key={list.name}>
                 <Image
                   cloudName="deam2hdcg"
                   publicId={`${list.image}`}

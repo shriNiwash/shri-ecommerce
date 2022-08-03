@@ -1,10 +1,13 @@
-import Navbar from "../components/navibar";
 import Footer from "../components/footers";
 import { Image } from "cloudinary-react";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { setGlobalState } from "../../state";
+const Navbar = dynamic(
+  () => import('../components/navibar'),
+  { ssr: false }
+)
 
 const Khalti = dynamic(
   () => {

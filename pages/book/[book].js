@@ -1,9 +1,14 @@
 import Image from "next/image";
 import Head from "next/head";
-import Navbar from "../components/navibar";
 import Footer from "../components/footers";
 import Khalti from "../../config/khalti";
 import { setGlobalState } from "../../state";
+import dynamic from 'next/dynamic';
+const Navbar = dynamic(
+  () => import('../components/navibar'),
+  { ssr: false }
+)
+
 
 export const getServerSideProps = async (context) => {
   const url_Link = context.query.selfLink;

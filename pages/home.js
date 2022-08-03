@@ -1,4 +1,4 @@
-import Navbar from "./components/navibar";
+
 import Head from "next/head";
 import Image from "next/image";
 import Cards from "./components/Cards";
@@ -9,6 +9,13 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Footer from "./components/footers";
 import BodyPart from "./components/body";
+import dynamic from 'next/dynamic';
+const Navbar = dynamic(
+  () => import('./components\/navibar'),
+  { ssr: false }
+)
+
+
 
 export default function Home(props) {
   const router = useRouter();

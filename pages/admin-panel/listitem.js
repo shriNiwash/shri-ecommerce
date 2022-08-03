@@ -4,8 +4,17 @@ import Admin from "./admin-navbar";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
-export const getServerSideProps = async () => {
-  const resp = await fetch("https://ecommerce-payment.herokuapp.com/list");
+export const getServerSideProps = async (context) => {
+  const datas = context.req.cookies["jwt-local"];
+  const myHeaders = new Headers({
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${datas}`,
+  });
+  const resp = await fetch("https://ecommerce-payment.herokuapp.com/list", {
+    method: "GET",
+    credentials: "include",
+    headers: myHeaders,
+  });
   const data = await resp.json();
   console.log(data);
 
@@ -20,18 +29,15 @@ const Listitem = ({ data }) => {
   const router = useRouter();
 
   async function handleDelete(id) {
-    if(window.confirm(`Are you sure want to Delete ${id}`) == true){
+    if (window.confirm(`Are you sure want to Delete ${id}`) == true) {
       const deleted = await axios.delete(
         `https://ecommerce-payment.herokuapp.com/list/${id}`
       );
       console.log(deleted);
       router.push("/admin-panel/listitem");
-
-    }
-    else{
+    } else {
       return false;
     }
-
   }
 
   return (
@@ -44,7 +50,7 @@ const Listitem = ({ data }) => {
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
         ></link>
       </Head>
-      <div className="container">
+      <div className="shri">
         <table className="table table-striped">
           <thead>
             <tr>

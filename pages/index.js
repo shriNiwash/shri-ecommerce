@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { setGlobalState, useGlobalState } from "../state";
+import Cookies from 'js-cookie';
 
 const Home = () => {
   const router = useRouter();
@@ -33,17 +33,11 @@ const Home = () => {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
+    console.log(userDetails);
 
     if (userDetails.status == 201) {
       setUserName(user.username);
-      setGlobalState("username", user.username);
-      // if (
-      //   localStorage.getItem("username") !== null
-      //   // JSON.parse(localStorage.getItem("username")).length === 0
-      // ) {
-      //   localStorage.setItem("username", user.username);
-      // }
-      // localStorage.setItem("username" ,user.username);
+      Cookies.set('username', user.username);
       setRedirect(true);
     } else {
       window.confirm("Invaid UserId or Password");
@@ -51,10 +45,7 @@ const Home = () => {
   };
 
   if (redirect) {
-    router.push({
-      pathname: "/home",
-      query: { name: userName },
-    });
+    router.push("/home");
   }
 
   return (

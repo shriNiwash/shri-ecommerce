@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import Navbar from "./components/navibar";
 import Link from "next/link";
 import Footer from './components/footers';
+import dynamic from 'next/dynamic';
+const Navbar = dynamic(
+  () => import('./components/navibar'),
+  { ssr: false }
+)
 
 export const getStaticProps = async () => {
   const res = await fetch(

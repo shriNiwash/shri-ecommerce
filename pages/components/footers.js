@@ -22,8 +22,8 @@ const Footer = () => {
               </p>
             </div>
             <div className="footer-col-3">
-              <h3>UseFull Links</h3>
               <ul className="footer-ul">
+              <h3>UseFull Links</h3>
                 <li>Coupons</li>
                 <li>Blog Post</li>
                 <li>Return Policy</li>
@@ -31,8 +31,8 @@ const Footer = () => {
               </ul>
             </div>
             <div className="footer-col-4">
-              <h3>Follow Us</h3>
               <ul className="footer-ul">
+              <h3>Follow Us</h3>
                 <li>Facebook</li>
                 <li>Twitter</li>
                 <li>Instagram</li>

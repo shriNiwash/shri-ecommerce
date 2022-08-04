@@ -29,7 +29,7 @@ const Navbar = (props) => {
         <nav className="navbar navbar-expand-lg bg-light">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              Ecommerce World
+              Red Store
             </a>
             <button
               className="navbar-toggler"

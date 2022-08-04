@@ -19,7 +19,6 @@ const Khalti = dynamic(
 export const getServerSideProps = async (context) => {
   const id = context.query;
   const ids = id.list;
-  console.log(ids);
   const res = await fetch(
     `https://ecommerce-payment.herokuapp.com/data/${ids}`
   );

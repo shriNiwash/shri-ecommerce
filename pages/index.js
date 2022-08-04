@@ -33,7 +33,6 @@ const Home = () => {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
-    console.log(userDetails);
 
     if (userDetails.status == 201) {
       setUserName(user.username);

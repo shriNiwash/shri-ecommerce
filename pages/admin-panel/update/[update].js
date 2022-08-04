@@ -17,7 +17,6 @@ export const getServerSideProps = async (context) => {
 };
 const Update = ({ ids }) => {
   const router = useRouter();
-  console.log(ids.id);
   const id = ids.id;
 
   useEffect(() => {

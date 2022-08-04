@@ -7,7 +7,6 @@ import Cookies from "js-cookie";
 
 export default function Khalti({ records }) {
   const username = Cookies.get("username");
-  console.log(username);
   const [productName] = useGlobalState("productName");
   let Config = {
     // replace this key with yours
@@ -23,14 +22,12 @@ export default function Khalti({ records }) {
           token: payload.token,
           amount: payload.amount,
         };
-        console.log(data.token, data.amount);
 
         axios
           .post(
             `https://apinextjs.herokuapp.com/payment-verification?token=${payload.token}&amount=${payload.amount}&key=${MyKey.secretKey}&username=${username}&product_name=${productName}`
           )
           .then((response) => {
-            console.log(response);
             alert(
               "Congrats Your Transaction Has be Completed.For Details Please visit My Transactions on Navbar"
             );

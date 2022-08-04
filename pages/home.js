@@ -21,7 +21,6 @@ export default function Home(props) {
   const router = useRouter();
   const [users, setUser] = useState("");
   useEffect(() => {
-    console.log(router.query.name);
     setUser(router.query.name);
   }, [router.query.name]);
 

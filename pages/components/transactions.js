@@ -2,9 +2,11 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useGlobalState } from "../../state";
+import Cookies from "js-cookie";
 
 const Transactions = () => {
-  const [username] = useGlobalState("username");
+  // const [username] = useGlobalState("username");
+  const username = Cookies.get("username");
   const [data, setData] = useState();
 
   useEffect(() => {

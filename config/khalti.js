@@ -3,10 +3,11 @@ import React from "react";
 import { useGlobalState } from "../state";
 import MyKey from "./khaltikey";
 import axios from "axios";
-
+import Cookies from "js-cookie";
 
 export default function Khalti({ records }) {
-  const [username] = useGlobalState("username");
+  const username = Cookies.get("username");
+  console.log(username);
   const [productName] = useGlobalState("productName");
   let Config = {
     // replace this key with yours

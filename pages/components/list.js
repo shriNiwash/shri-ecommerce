@@ -3,6 +3,7 @@ import { Image } from "cloudinary-react";
 import Head from "next/head";
 import Footer from "./footers";
 import dynamic from 'next/dynamic';
+import Cookies from "js-cookie";
 const Navbar = dynamic(
   () => import('../components/navibar'),
   { ssr: false }
@@ -57,7 +58,7 @@ const List = ({ data }) => {
                 <div className="card-body">
                   <h6 className="card-title">{list.name}</h6>
                   <p className="card-text">{list.description}</p>
-                  <a className="btn btn-primary">Detail</a>
+                  <Link href={`/list/${list._id}`}><a className="btn btn-primary">Detail</a></Link>
                   <Link href={`/product/${list._id}`}>
                     <a className="btn btn-primary" id="addtocard">
                       Add to Cart

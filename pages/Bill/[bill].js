@@ -1,6 +1,6 @@
 import GeneratePDF from "../components/Pdfgenerator";
 import Navbar from "../components/navibar";
-import Footer from "../components/Footer";
+import Footer from '../components/footers';
 
 export const getServerSideProps=async(context)=>{
   const token = context.query.bill;

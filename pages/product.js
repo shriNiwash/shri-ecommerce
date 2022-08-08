@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from './components/footers';
 import dynamic from 'next/dynamic';
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 const Navbar = dynamic(
   () => import('./components/navibar'),
   { ssr: false }
@@ -21,6 +23,23 @@ export const getStaticProps = async () => {
   };
 };
 const Products = ({ data }) => {
+  const router = useRouter();
+  const usernam = Cookies.get("username");
+  const loginFirst = (ids)=>{
+    if(!usernam){
+      if(window.confirm("Please Login First !") ==  true){
+      router.push("/");
+      }
+      else{
+        return false;
+      }
+
+    }
+    else{
+      router.push(`/book/${1}?selfLink=${ids}`);
+    }
+    
+  }
   return (
     <>
       <Navbar />
@@ -49,7 +68,7 @@ const Products = ({ data }) => {
                   <h6 className="card-title">{list.volumeInfo.subtitle}</h6>
                   <p className="card-text">{list.volumeInfo.publisher}</p>
                   <a className="btn btn-primary">Detail</a>
-                  <Link href={`/book/${1}?selfLink=${list.selfLink}`}><a className="btn btn-primary" id="addtocard">Add to Cart</a></Link>
+                  <a className="btn btn-primary" id="addtocard" onClick={()=>loginFirst(list.selfLink)}>Add to Cart</a>
                 </div>
               </div>
             </>

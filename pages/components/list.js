@@ -2,12 +2,10 @@ import Link from "next/link";
 import { Image } from "cloudinary-react";
 import Head from "next/head";
 import Footer from "./footers";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import Cookies from "js-cookie";
-const Navbar = dynamic(
-  () => import('../components/navibar'),
-  { ssr: false }
-)
+import { useRouter } from "next/router";
+const Navbar = dynamic(() => import("../components/navibar"), { ssr: false });
 
 export const getServerSideProps = async (context) => {
   const datas = context.req.cookies["jwt-local"];
@@ -30,6 +28,18 @@ export const getServerSideProps = async (context) => {
 };
 
 const List = ({ data }) => {
+  const router = useRouter();
+  const getMe = (id)=>{
+    const usernam = Cookies.get("username");
+    if(!usernam)
+    {
+      window.confirm("Please Login First");
+      router.push("/");
+    }
+    else{
+      router.push(`/product/${id}`)
+    }
+  }
   return (
     <>
       <Head>
@@ -57,12 +67,13 @@ const List = ({ data }) => {
                 <div className="card-body">
                   <h6 className="card-title">{list.name}</h6>
                   <p className="card-text">{list.description}</p>
-                  <Link href={`/list/${list._id}`}><a className="btn btn-primary">Detail</a></Link>
-                  <Link href={`/product/${list._id}`}>
-                    <a className="btn btn-primary" id="addtocard">
-                      Add to Cart
-                    </a>
+                  <Link href={`/list/${list._id}`}>
+                    <a className="btn btn-primary">Detail</a>
                   </Link>
+
+                <a className="btn btn-primary" id="addtocard" onClick={()=>getMe(list._id)}>
+                    Add to Cart
+                  </a>
                 </div>
               </div>
             </>

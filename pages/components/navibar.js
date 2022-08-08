@@ -72,14 +72,14 @@ const Navbar = (props) => {
                 </li>
               </ul>
               <form className="d-flex" role="search">
-              <h6 className="navbar-button-name">{username}</h6>
+              <h6 className="navbar-button-name">{(username)?username : <Link href={"/"}><a>Login</a></Link>}</h6>
                 <button
                   className="btn btn-outline-success"
                   id="logout"
                   type="submit"
                   onClick={(e) => logout(e)}
                 >
-                  Logout
+                  {(username) ? "Logout" : ""}
                 </button>
               </form>
             </div>

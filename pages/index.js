@@ -97,6 +97,9 @@ const Home = () => {
               <br />
               <Link href="/admin-panel/adminlogin">
                 <a>Admin-Panel</a>
+              </Link><br />
+              <Link href="/home">
+                <a>Skip Login ! Go to Home Page</a>
               </Link>
             </div>
           </form>

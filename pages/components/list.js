@@ -33,8 +33,13 @@ const List = ({ data }) => {
     const usernam = Cookies.get("username");
     if(!usernam)
     {
-      window.confirm("Please Login First");
-      router.push("/");
+      if(window.confirm("Please Login First") == true)
+      {
+        router.push("/");
+      }
+      else{
+        return false;
+      }    
     }
     else{
       router.push(`/product/${id}`)

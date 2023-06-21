@@ -10,7 +10,7 @@ const Navbar = (props) => {
   const router = useRouter();
   const logout = async (e) => {
     e.preventDefault();
-    const resp = await fetch("https://ecommerce-payment.herokuapp.com/logout", {
+    const resp = await fetch("https://ecommercebackend-ydky.onrender.com/logout", {
       method: "POST",
       credentials: "include",
     });

@@ -10,7 +10,7 @@ export const getServerSideProps = async (context) => {
     "Content-Type": "application/json",
     Authorization: `Bearer ${datas}`,
   });
-  const resp = await fetch("https://ecommerce-payment.herokuapp.com/list", {
+  const resp = await fetch("https://ecommercebackend-ydky.onrender.com/list", {
     method: "GET",
     credentials: "include",
     headers: myHeaders,
@@ -31,7 +31,7 @@ const Listitem = ({ data }) => {
   async function handleDelete(id) {
     if (window.confirm(`Are you sure want to Delete ${id}`) == true) {
       const deleted = await axios.delete(
-        `https://ecommerce-payment.herokuapp.com/list/${id}`
+        `https://ecommercebackend-ydky.onrender.com/list/${id}`
       );
       console.log(deleted);
       router.push("/admin-panel/listitem");

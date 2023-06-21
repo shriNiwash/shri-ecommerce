@@ -20,7 +20,7 @@ export const getServerSideProps = async (context) => {
   const id = context.query;
   const ids = id.list;
   const res = await fetch(
-    `https://ecommerce-payment.herokuapp.com/data/${ids}`
+    `https://ecommercebackend-ydky.onrender.com/data/${ids}`
   );
   const data = await res.json();
   return {

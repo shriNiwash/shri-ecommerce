@@ -15,7 +15,7 @@ const Registration = () => {
 
   const onSubmit = async (data) => {
     console.log(data);
-    const registration_result = await fetch("https://ecommerce-payment.herokuapp.com/register", {
+    const registration_result = await fetch("https://ecommercebackend-ydky.onrender.com/register", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

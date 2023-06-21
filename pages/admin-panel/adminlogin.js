@@ -24,7 +24,7 @@ const Home = () => {
     e.preventDefault();
 
     userDetails = await fetch(
-      "https://ecommerce-payment.herokuapp.com/admin-login",
+      "https://ecommercebackend-ydky.onrender.com/admin-login",
       {
         method: "POST",
         body: JSON.stringify(user),

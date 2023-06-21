@@ -42,7 +42,7 @@ const Insert = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://ecommerce-payment.herokuapp.com/insert",insertData)
+    axios.post("https://ecommercebackend-ydky.onrender.com/insert",insertData)
     .then((response)=>{
         setFalseState(true);
     })

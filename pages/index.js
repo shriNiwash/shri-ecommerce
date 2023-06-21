@@ -25,7 +25,7 @@ const Home = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    userDetails = await fetch("https://ecommerce-payment.herokuapp.com/login", {
+    userDetails = await fetch("https://ecommercebackend-ydky.onrender.com/login", {
       method: "POST",
       body: JSON.stringify(user),
       credentials: "include",

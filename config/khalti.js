@@ -25,7 +25,7 @@ export default function Khalti({ records }) {
 
         axios
           .post(
-            `https://apinextjs.herokuapp.com/payment-verification?token=${payload.token}&amount=${payload.amount}&key=${MyKey.secretKey}&username=${username}&product_name=${productName}`
+            `https://ecommercebackend-ydky.onrender.com/payment-verification?token=${payload.token}&amount=${payload.amount}&key=${MyKey.secretKey}&username=${username}&product_name=${productName}`
           )
           .then((response) => {
             alert(
